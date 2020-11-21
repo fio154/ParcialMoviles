@@ -6,14 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class PersonaBD extends SQLiteOpenHelper {
-    public PersonaBD(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+public class AdminSQLite extends SQLiteOpenHelper {
+    public AdminSQLite(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+    public void onCreate(SQLiteDatabase baseDeDatos) {
+        baseDeDatos.execSQL("create table persona (id int primary key, nombre text, apellido text)");
     }
 
     @Override
